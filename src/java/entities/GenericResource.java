@@ -82,7 +82,10 @@ public class GenericResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getJSON() 
     {
-        json = "plain text from RESTful web service!";
+        json = "{" +
+                "\"id\" : 1," +
+                "\"name\" : \"SOEN487\"" +
+                "}";
         return json;
     }
 
