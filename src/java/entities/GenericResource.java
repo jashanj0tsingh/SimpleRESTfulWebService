@@ -7,14 +7,10 @@ package entities;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 /**
  * REST Web Service
@@ -89,18 +85,5 @@ public class GenericResource {
                 "\"name\" : \"SOEN487\"" +
                 "}";
         return json;
-    }
-
-    /**
-     * PUT method for updating or creating an instance of GenericResource
-     * @param content representation for the resource
-     * @return 
-     */
-    @PUT
-    @Path("/text")
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response putText(String content) {
-        plainText = content;
-        return Response.status(200).entity(plainText).build();
     }
 }
